@@ -31,8 +31,9 @@ public class AttrGroupController {
     @Autowired
     private AttrGroupService attrGroupService;
 
+    
     /**
-     * 列表
+     * 列表获取属性分组
      */
     @RequestMapping("/list")
     //@RequiresPermissions("pms:attrgroup:list")
@@ -55,7 +56,7 @@ public class AttrGroupController {
     }
 
     /**
-     * 保存
+     * 保存  保存属性分组
      */
     @RequestMapping("/save")
     //@RequiresPermissions("pms:attrgroup:save")

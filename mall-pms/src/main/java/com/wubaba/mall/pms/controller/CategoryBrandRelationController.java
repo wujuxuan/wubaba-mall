@@ -30,6 +30,7 @@ import com.wubaba.common.utils.R;
 public class CategoryBrandRelationController {
     @Autowired
     private CategoryBrandRelationService categoryBrandRelationService;
+    
 
     /**
      * 列表
@@ -72,9 +73,10 @@ public class CategoryBrandRelationController {
     //@RequiresPermissions("pms:categorybrandrelation:update")
     public R update(@RequestBody CategoryBrandRelationEntity categoryBrandRelation){
 		categoryBrandRelationService.updateById(categoryBrandRelation);
-
         return R.ok();
     }
+
+    
 
     /**
      * 删除
@@ -84,7 +86,8 @@ public class CategoryBrandRelationController {
     public R delete(@RequestBody Long[] ids){
 		categoryBrandRelationService.removeByIds(Arrays.asList(ids));
 
+		//删除关联表
+        
         return R.ok();
     }
-
 }

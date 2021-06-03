@@ -91,8 +91,7 @@ public class CategoryController {
     @RequestMapping("/delete")
     //@RequiresPermissions("pms:category:delete")
     public R delete(@RequestBody Long[] catIds){
-		categoryService.removeByIds(Arrays.asList(catIds));
-
+        categoryService.delete(Arrays.asList(catIds));
         return R.ok();
     }
 

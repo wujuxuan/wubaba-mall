@@ -2,10 +2,21 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://192.168.0.189:3306/mall_pms
+    url: jdbc:mysql://192.168.0.189:3306/mall_pms?useUnicode=true&characterEncoding=UTF-8
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: mall-pms
+    
+  cloud:
+    nacos:
+      server-addr: 192.168.0.189:8848
+  
+    alicloud:
+      access-key: LTAI5tNMTcbahkzHnvjapiew
+      secret-key: 7ujv0tt8XqoaNs3B2XnaGvNmPyT9Z0
+      oos:
+        endpoint: wubaba-mall 
+      
 mybatis-plus:
   global-config:
     db-config:

@@ -15,5 +15,6 @@ import java.util.Map;
  */
 public interface BrandService extends IService<BrandEntity> {
 
+    void removeBrandAndRelationByIds(Long[] brandIds);
 }
 

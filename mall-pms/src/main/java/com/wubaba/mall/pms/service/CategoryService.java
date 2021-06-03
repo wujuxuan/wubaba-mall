@@ -17,5 +17,7 @@ import java.util.Map;
 public interface CategoryService extends IService<CategoryEntity> {
 
     List<CategoryEntity> listWithTree();
+
+    void delete(List<Long> asList);
 }
 

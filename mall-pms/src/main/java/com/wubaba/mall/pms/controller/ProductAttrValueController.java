@@ -38,7 +38,6 @@ public class ProductAttrValueController {
     //@RequiresPermissions("pms:productattrvalue:list")
     public R list(Page page, ProductAttrValueEntity entity){
         Page<ProductAttrValueEntity> pageData = productAttrValueService.page(page, Wrappers.query(entity));
-
         return R.ok().put("page", pageData);
     }
 
@@ -61,7 +60,6 @@ public class ProductAttrValueController {
     //@RequiresPermissions("pms:productattrvalue:save")
     public R save(@RequestBody ProductAttrValueEntity productAttrValue){
 		productAttrValueService.save(productAttrValue);
-
         return R.ok();
     }
 

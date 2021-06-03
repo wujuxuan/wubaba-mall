@@ -32,13 +32,12 @@ public class AttrController {
     private AttrService attrService;
 
     /**
-     * 列表
+     * 列表获取属性分组的相关信息 需要传递一个catelogId来查询
      */
     @RequestMapping("/list")
     //@RequiresPermissions("pms:attr:list")
     public R list(Page page, AttrEntity entity){
         Page<AttrEntity> pageData = attrService.page(page, Wrappers.query(entity));
-
         return R.ok().put("page", pageData);
     }
 
@@ -50,7 +49,6 @@ public class AttrController {
    // @RequiresPermissions("pms:attr:info")
     public R info(@PathVariable("attrId") Long attrId){
 		AttrEntity attr = attrService.getById(attrId);
-
         return R.ok().put("attr", attr);
     }
 
@@ -61,7 +59,6 @@ public class AttrController {
     //@RequiresPermissions("pms:attr:save")
     public R save(@RequestBody AttrEntity attr){
 		attrService.save(attr);
-
         return R.ok();
     }
 
@@ -72,7 +69,6 @@ public class AttrController {
     //@RequiresPermissions("pms:attr:update")
     public R update(@RequestBody AttrEntity attr){
 		attrService.updateById(attr);
-
         return R.ok();
     }
 
@@ -83,7 +79,6 @@ public class AttrController {
     //@RequiresPermissions("pms:attr:delete")
     public R delete(@RequestBody Long[] attrIds){
 		attrService.removeByIds(Arrays.asList(attrIds));
-
         return R.ok();
     }
 

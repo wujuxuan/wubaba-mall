@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.wubaba.mall.pms.service.CategoryBrandRelationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,8 @@ import com.wubaba.common.utils.R;
 public class BrandController {
     @Autowired
     private BrandService brandService;
+
+   
 
     /**
      * 列表
@@ -72,7 +75,6 @@ public class BrandController {
     //@RequiresPermissions("pms:brand:update")
     public R update(@RequestBody BrandEntity brand){
 		brandService.updateById(brand);
-
         return R.ok();
     }
 
@@ -82,8 +84,7 @@ public class BrandController {
     @RequestMapping("/delete")
     //@RequiresPermissions("pms:brand:delete")
     public R delete(@RequestBody Long[] brandIds){
-		brandService.removeByIds(Arrays.asList(brandIds));
-
+		brandService.removeBrandAndRelationByIds(brandIds);
         return R.ok();
     }
 

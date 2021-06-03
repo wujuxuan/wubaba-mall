@@ -25,12 +25,12 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 品牌id
 	 */
-	@NotBlank(message="年龄不能为空")
 	@TableId
 	private Long brandId;
 	/**
 	 * 品牌名
 	 */
+	@NotBlank(message = "品牌名称不能为空")
 	private String name;
 	/**
 	 * 品牌logo地址

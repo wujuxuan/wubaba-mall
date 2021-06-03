@@ -38,7 +38,6 @@ public class SkuImagesController {
     //@RequiresPermissions("pms:skuimages:list")
     public R list(Page page, SkuImagesEntity entity){
         Page<SkuImagesEntity> pageData = skuImagesService.page(page, Wrappers.query(entity));
-
         return R.ok().put("page", pageData);
     }
 
@@ -72,7 +71,6 @@ public class SkuImagesController {
     //@RequiresPermissions("pms:skuimages:update")
     public R update(@RequestBody SkuImagesEntity skuImages){
 		skuImagesService.updateById(skuImages);
-
         return R.ok();
     }
 
@@ -83,7 +81,6 @@ public class SkuImagesController {
     //@RequiresPermissions("pms:skuimages:delete")
     public R delete(@RequestBody Long[] ids){
 		skuImagesService.removeByIds(Arrays.asList(ids));
-
         return R.ok();
     }
 

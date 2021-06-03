@@ -31,6 +31,7 @@ public class CommentReplayController {
     @Autowired
     private CommentReplayService commentReplayService;
 
+    
     /**
      * 列表
      */
@@ -82,6 +83,8 @@ public class CommentReplayController {
     @RequestMapping("/delete")
     //@RequiresPermissions("pms:commentreplay:delete")
     public R delete(@RequestBody Long[] ids){
+        
+        
 		commentReplayService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
