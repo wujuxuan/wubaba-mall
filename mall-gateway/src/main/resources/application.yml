@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: mall-gateway
+  cloud:
+    nacos:
+      server-addr: 192.168.0.189:8848
+    gateway:
+      routes: 
+        
+            
+            
+        - id: pms_route
+          uri: lb://mall-pms
+          predicates:
+            - Path=/api/pms/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment} 
+            
+        - id: renren-fast
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}    
+server:
+  port: 88

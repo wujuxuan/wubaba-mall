@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mall-sms" />
+        <module name="mall-ums" />
+        <module name="mall-oms" />
+        <module name="mall-wms" />
+        <module name="renren-fast" />
+        <module name="mall-pms" />
+        <module name="mall-common" />
+        <module name="renren-generator" />
+        <module name="mall-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gateway" target="1.8" />
+      <module name="ums-mall" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gateway" options="-parameters" />
+      <module name="mall-gateway" options="-parameters" />
+      <module name="mall-oms" options="-parameters" />
+      <module name="mall-pms" options="-parameters" />
+      <module name="mall-sms" options="-parameters" />
+      <module name="mall-ums" options="-parameters" />
+      <module name="mall-wms" options="-parameters" />
+      <module name="renren-fast" options="-parameters" />
+      <module name="renren-generator" options="-parameters" />
+      <module name="ums-mall" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.0.189:3306/mall_sms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: mall-sms
+  cloud:
+    nacos:
+      server-addr: 192.168.0.189:8848
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 7030
