@@ -4,8 +4,11 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
-import java.util.Date;
+
+import com.sun.istack.internal.NotNull;
 import lombok.Data;
+
+import javax.validation.constraints.NotBlank;
 
 /**
  * 品牌
@@ -22,6 +25,7 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 品牌id
 	 */
+	@NotBlank(message="年龄不能为空")
 	@TableId
 	private Long brandId;
 	/**
